@@ -1,3 +1,4 @@
 /.idea
 /datastuct-demo/target
 /datastuct-demo/*.iml
+/thread-demo/*.iml
