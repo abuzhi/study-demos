@@ -47,8 +47,8 @@ public class KafkaProducerUtils {
     /**
      * 默认文件
      */
-    public static synchronized void init(){
-        init("");
+    public static synchronized void init(Properties props){
+        properties = props;
     }
 
     public static Producer producer(){
