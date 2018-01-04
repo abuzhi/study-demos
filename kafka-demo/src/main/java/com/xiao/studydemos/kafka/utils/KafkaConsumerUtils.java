@@ -1,4 +1,4 @@
-package com.xiao.studydemos.kafka;
+package com.xiao.studydemos.kafka.utils;
 
 import org.apache.kafka.clients.consumer.Consumer;
 import org.apache.kafka.clients.consumer.ConsumerConfig;

@@ -1,9 +1,9 @@
 package com.xiao.studydemos.kafka;
 
 import com.xiao.studydemos.BaseTest;
+import com.xiao.studydemos.kafka.utils.KafkaConsumerUtils;
 import kafka.admin.AdminClient;
 import org.apache.kafka.clients.consumer.Consumer;
-import org.apache.kafka.clients.consumer.KafkaConsumer;
 import org.apache.kafka.common.TopicPartition;
 import org.junit.After;
 import org.junit.Before;
@@ -11,14 +11,11 @@ import org.junit.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import scala.Option;
-import scala.collection.JavaConversions;
 import scala.collection.JavaConverters;
 
 import java.io.File;
 import java.util.*;
 import java.util.List;
-
-import static org.junit.Assert.*;
 
 /**
  * Created by xiaoliang

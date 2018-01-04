@@ -1,4 +1,4 @@
-package com.xiao.studydemos.kafka;
+package com.xiao.studydemos.kafka.utils;
 
 /**
  * Created by xiaoliang

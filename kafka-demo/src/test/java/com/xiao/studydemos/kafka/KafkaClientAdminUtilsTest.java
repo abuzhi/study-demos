@@ -1,6 +1,7 @@
 package com.xiao.studydemos.kafka;
 
 import com.xiao.studydemos.BaseTest;
+import com.xiao.studydemos.kafka.utils.KafkaConsumerUtils;
 import org.apache.kafka.clients.admin.*;
 import org.apache.kafka.common.KafkaFuture;
 import org.apache.kafka.common.Node;
