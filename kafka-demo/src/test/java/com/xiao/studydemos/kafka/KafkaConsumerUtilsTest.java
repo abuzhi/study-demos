@@ -1,7 +1,7 @@
 package com.xiao.studydemos.kafka;
 
 import com.xiao.studydemos.BaseTest;
-import com.xiao.studydemos.kafka.utils.KafkaClientAdminUtils;
+import com.xiao.studydemos.kafka.utils.KafkaClientsAdminUtils;
 import com.xiao.studydemos.kafka.utils.KafkaConsumerUtils;
 import org.apache.kafka.clients.admin.TopicDescription;
 import org.apache.kafka.clients.consumer.*;
@@ -84,7 +84,7 @@ public class KafkaConsumerUtilsTest extends BaseTest{
     public void testConsumerPartitions() throws Exception {
         String topic = properties.getProperty("consumer.topic");
         List<String> topicList = Arrays.asList(topic.split(","));
-        KafkaClientAdminUtils clientAdminUtils = new KafkaClientAdminUtils();
+        KafkaClientsAdminUtils clientAdminUtils = new KafkaClientsAdminUtils();
         clientAdminUtils.init(properties);
         Map<String, TopicDescription> topicMap = clientAdminUtils.describeTopics(topicList);
         ExecutorService pool = Executors.newFixedThreadPool(30);

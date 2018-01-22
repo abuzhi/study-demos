@@ -13,7 +13,7 @@ import java.util.concurrent.ExecutionException;
  *
  * @Version 1.0
  */
-public class KafkaClientAdminUtils {
+public class KafkaClientsAdminUtils {
     private Properties properties ;
     private AdminClient adminClient;
 

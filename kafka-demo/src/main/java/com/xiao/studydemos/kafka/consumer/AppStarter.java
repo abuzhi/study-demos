@@ -1,6 +1,6 @@
 package com.xiao.studydemos.kafka.consumer;
 
-import com.xiao.studydemos.kafka.utils.KafkaClientAdminUtils;
+import com.xiao.studydemos.kafka.utils.KafkaClientsAdminUtils;
 import org.apache.kafka.clients.admin.TopicDescription;
 import org.apache.kafka.common.TopicPartition;
 import org.apache.kafka.common.TopicPartitionInfo;
@@ -29,7 +29,7 @@ public class AppStarter {
 
         String topic = properties.getProperty("consumer.topic");
         List<String> topicList = Arrays.asList(topic.split(","));
-        KafkaClientAdminUtils clientAdminUtils = new KafkaClientAdminUtils();
+        KafkaClientsAdminUtils clientAdminUtils = new KafkaClientsAdminUtils();
         clientAdminUtils.init(properties);
         Map<String, TopicDescription> topicMap = clientAdminUtils.describeTopics(topicList);
         ExecutorService pool = Executors.newFixedThreadPool(30);

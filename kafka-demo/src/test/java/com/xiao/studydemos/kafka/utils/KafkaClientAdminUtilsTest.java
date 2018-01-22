@@ -15,14 +15,12 @@ import org.junit.Test;
 
 import java.util.*;
 
-import static org.junit.Assert.*;
-
 /**
  * Created by MeiMei on 2018/1/7.
  */
 public class KafkaClientAdminUtilsTest extends BaseTest{
 
-    private KafkaClientAdminUtils clientAdminUtils;
+    private KafkaClientsAdminUtils clientAdminUtils;
     private Properties properties ;
 
     @Before
@@ -31,7 +29,7 @@ public class KafkaClientAdminUtilsTest extends BaseTest{
         Properties props = new Properties();
         props.put("bootstrap.servers", properties.getProperty("bootstrap.servers"));
         props.put("client.id","test");
-        clientAdminUtils = new KafkaClientAdminUtils();
+        clientAdminUtils = new KafkaClientsAdminUtils();
         clientAdminUtils.init(props);
     }
 
