@@ -44,26 +44,26 @@ public class KafkaConsumerUtilsTest extends BaseTest{
         int count = 100;
         while (true) {
             ConsumerRecords<String, String> records = consumer.poll(100);
-            records.partitions();
 
-            for (TopicPartition partition : records.partitions()) {
-
-                List<ConsumerRecord<String, String>> partitionRecords = records.records(partition);
-                for (ConsumerRecord<String, String> record : partitionRecords) {
-                    System.out.printf("part=%d ,offset = %d, key = %s, value = %s%n ",record.partition(), record.offset(), record.key(), record.value());
-                }
-
-                long lastOffset = partitionRecords.get(partitionRecords.size() - 1).offset();
-                consumer.commitSync(Collections.singletonMap(partition, new OffsetAndMetadata(lastOffset + 1)));
-            }
+//            for (TopicPartition partition : records.partitions()) {
 //
-//            for (ConsumerRecord<String, String> record : records){
-//                count -- ;
-//                System.out.printf("part=%d ,offset = %d, key = %s, value = %s%n ",record.partition(), record.offset(), record.key(), record.value());
-//                if(count<0){
-//                    break;
+//                List<ConsumerRecord<String, String>> partitionRecords = records.records(partition);
+//                for (ConsumerRecord<String, String> record : partitionRecords) {
+//                    System.out.printf("part=%d ,offset = %d, key = %s, value = %s%n ",record.partition(), record.offset(), record.key(), record.value());
 //                }
+//
+//                long lastOffset = partitionRecords.get(partitionRecords.size() - 1).offset();
+//                consumer.commitSync(Collections.singletonMap(partition, new OffsetAndMetadata(lastOffset + 1)));
 //            }
+//
+            for (ConsumerRecord<String, String> record : records){
+                System.out.printf("part=%d ,offset = %d, key = %s, value = %s%n ",record.partition(), record.offset(), record.key(), record.value());
+                if(count<0){
+                    break;
+                }
+            }
+
+            Thread.sleep(2000);
         }
     }
 

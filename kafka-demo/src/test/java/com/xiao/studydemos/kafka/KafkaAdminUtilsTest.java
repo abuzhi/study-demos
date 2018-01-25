@@ -39,12 +39,8 @@ public class KafkaAdminUtilsTest extends BaseTest {
 
         Properties props = new Properties();
         props.put("bootstrap.servers", properties.getProperty("bootstrap.servers"));
-        props.put("enable.auto.commit", "true");
         props.put("client.id", "test");
-        props.put("auto.commit.interval.ms", "1000");
         props.put("session.timeout.ms", "30000");
-        props.put("key.deserializer", "org.apache.kafka.common.serialization.StringDeserializer");
-        props.put("value.deserializer", "org.apache.kafka.common.serialization.StringDeserializer");
         admin = AdminClient.create(props);
 
     }
@@ -52,7 +48,7 @@ public class KafkaAdminUtilsTest extends BaseTest {
 
     @Test
     public void testAdmin() throws Exception {
-        AdminClient.ConsumerGroupSummary cgs = admin.describeConsumerGroup("test-processor-work", 0);
+        AdminClient.ConsumerGroupSummary cgs = admin.describeConsumerGroup("test-processor-work-1", 0);
         //scala list转java List
         Option<scala.collection.immutable.List<AdminClient.ConsumerSummary>> bbbb = cgs.consumers();
         scala.collection.immutable.List<AdminClient.ConsumerSummary> consumerSummaryList_s = bbbb.get();
