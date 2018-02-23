@@ -21,6 +21,9 @@ public class ListDemoTest {
         list.add(0,"0");
 
         list.add("test");
+
+        List<Integer> list1 = new ArrayList<>();
+
     }
 
     @Test
