@@ -31,4 +31,32 @@ public class MapDemoTest {
     public void testHashMap() throws Exception {
         Map<String,Object> map = new HashMap<>();
     }
+
+    @Test
+    public void testHash() throws Exception {
+        Object k = "test";
+        int hash = 0;
+        boolean useAltHashing = true;
+        int hashSeed = sun.misc.Hashing.randomHashSeed(this);
+
+        int h = 0;
+        if (useAltHashing) {
+            if ( k instanceof String) {
+                hash = sun.misc.Hashing.stringHash32((String) k);
+                System.out.println(hash);
+            }
+            h = hashSeed;
+        }
+
+        h ^= k.hashCode();
+
+        // This function ensures that hashCodes that differ only by
+        // constant multiples at each bit position have a bounded
+        // number of collisions (approximately 8 at default load factor).
+        h ^= (h >>> 20) ^ (h >>> 12);
+        hash = h ^ (h >>> 7) ^ (h >>> 4);
+
+        System.out.println(hash);
+
+    }
 }

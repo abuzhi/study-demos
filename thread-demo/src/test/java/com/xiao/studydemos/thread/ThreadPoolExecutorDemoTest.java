@@ -7,6 +7,7 @@ import org.junit.Test;
 import java.util.Queue;
 import java.util.concurrent.*;
 import java.util.concurrent.atomic.AtomicInteger;
+import java.util.concurrent.locks.ReentrantLock;
 
 import static org.junit.Assert.*;
 
@@ -42,5 +43,16 @@ public class ThreadPoolExecutorDemoTest {
         assertEquals(0,CAPACITY);
         BlockingQueue queue = new LinkedBlockingDeque(10);
         ThreadPoolExecutor pool = new ThreadPoolExecutor(10,20, 3L,TimeUnit.MINUTES,queue);
+    }
+
+    @Test
+    public void testReetrentLock() throws Exception {
+        ReentrantLock reentrantLock = new ReentrantLock(true);
+
+
+        reentrantLock.lock();
+
+
+        reentrantLock.unlock();
     }
 }
