@@ -37,4 +37,28 @@ public class T5_Longest_Palindromic_Substring {
 
         return "";
     }
+
+    /**
+     * 暴力算法(朴素匹配)
+     * @param source
+     * @return
+     */
+    public String bruteForce(String source){
+        char[] arrs = source.toCharArray();
+        int maxLen = 0, len = arrs.length;
+
+        String result = "";
+        if (arrs.length < 2) {
+            return source;
+        }
+        boolean is = len % 2 == 0 ? true : false;
+
+        for (int i = 0; i < (len/2 + 1); i++) {
+
+        }
+
+        return "";
+    }
+
+
 }
