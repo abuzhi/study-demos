@@ -11,4 +11,16 @@ public class HungrySingletonTest {
         HungrySingleton singleton = HungrySingleton.getInstance();
 
     }
+
+    @Test
+    public void testEnum() {
+        EnumSingleton singleton = EnumSingleton.SINGLETON;
+
+    }
+
+    @Test
+    public void testLazy() {
+        LazySingleton singleton = LazySingleton.getInstance();
+
+    }
 }
