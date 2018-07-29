@@ -43,6 +43,7 @@ public class ThreadPoolExecutorDemoTest {
         assertEquals(0,CAPACITY);
         BlockingQueue queue = new LinkedBlockingDeque(10);
         ThreadPoolExecutor pool = new ThreadPoolExecutor(10,20, 3L,TimeUnit.MINUTES,queue);
+        Executors.newCachedThreadPool();
     }
 
     @Test
