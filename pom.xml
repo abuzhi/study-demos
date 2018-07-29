@@ -13,26 +13,17 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <logback.version>1.1.3</logback.version>
         <slf4j.version>1.7.12</slf4j.version>
-        <kafka.version>1.0.0</kafka.version>
-        <!--<kafka.version>0.11.0.0</kafka.version>-->
-        <zookeeper.version>3.4.8</zookeeper.version>
-        <HikariCP.version>2.7.4</HikariCP.version>
         <fastjson.version>1.2.31</fastjson.version>
 
         <junit.version>4.12</junit.version>
         <mockito.version>2.13.0</mockito.version>
-        <easymock.version>3.5.1</easymock.version>
-
-        <spring.version>4.3.13.RELEASE</spring.version>
-        <spring.kafka.version>2.1.0.RELEASE</spring.kafka.version>
-        <!-- datasource -->
-        <jedis.version>2.9.0</jedis.version>
+        <easymock.version>3.4</easymock.version>
 
         <!--maven plugins-->
         <maven-war-plugin.version>3.2.0</maven-war-plugin.version>
         <maven-surefire-plugin.version>2.18.1</maven-surefire-plugin.version>
         <maven-compiler-plugin.version>2.5.1</maven-compiler-plugin.version>
-        <maven-compiler-jdk.version>1.7</maven-compiler-jdk.version>
+        <maven-compiler-jdk.version>1.8</maven-compiler-jdk.version>
         <maven-shade-plugin.version>2.4.3</maven-shade-plugin.version>
         <tomcat7-maven-plugin.version>2.0</tomcat7-maven-plugin.version>
 
@@ -41,11 +32,9 @@
     <modules>
         <module>thread-demo</module>
         <module>nio-demo</module>
-        <module>leetcode-demo</module>
-        <module>kafka-demo</module>
         <module>jdk-demo</module>
         <module>datastuct-demo</module>
-        <module>commons</module>
+        <module>design-pattern-demo</module>
     </modules>
 
     <dependencyManagement>
@@ -67,26 +56,6 @@
                 <groupId>org.easymock</groupId>
                 <artifactId>easymock</artifactId>
                 <version>${easymock.version}</version>
-                <scope>test</scope>
-            </dependency>
-
-
-            <!--spring -->
-            <dependency>
-                <groupId>org.springframework</groupId>
-                <artifactId>spring-test</artifactId>
-                <version>${spring.version}</version>
-                <scope>test</scope>
-            </dependency>
-            <dependency>
-                <groupId>org.springframework</groupId>
-                <artifactId>spring-context</artifactId>
-                <version>${spring.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.springframework.kafka</groupId>
-                <artifactId>spring-kafka</artifactId>
-                <version>${spring.kafka.version}</version>
             </dependency>
 
             <dependency>
@@ -94,57 +63,6 @@
                 <artifactId>commons-lang3</artifactId>
                 <version>3.7</version>
             </dependency>
-            <dependency>
-                <groupId>com.zaxxer</groupId>
-                <artifactId>HikariCP</artifactId>
-                <version>${HikariCP.version}</version>
-            </dependency>
-
-            <!-- kafka -->
-            <dependency>
-                <groupId>org.apache.kafka</groupId>
-                <artifactId>kafka_2.11</artifactId>
-                <version>${kafka.version}</version>
-                <exclusions>
-                    <exclusion>
-                        <groupId>org.apache.zookeeper</groupId>
-                        <artifactId>zookeeper</artifactId>
-                    </exclusion>
-                    <exclusion>
-                        <groupId>log4j</groupId>
-                        <artifactId>log4j</artifactId>
-                    </exclusion>
-                    <exclusion>
-                        <artifactId>slf4j-log4j12</artifactId>
-                        <groupId>org.slf4j</groupId>
-                    </exclusion>
-                    <exclusion>
-                        <groupId>org.apache.kafka</groupId>
-                        <artifactId>kafka-clients</artifactId>
-                    </exclusion>
-                </exclusions>
-            </dependency>
-            <dependency>
-                <groupId>redis.clients</groupId>
-                <artifactId>jedis</artifactId>
-                <version>${jedis.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.apache.kafka</groupId>
-                <artifactId>kafka-clients</artifactId>
-                <version>${kafka.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.apache.kafka</groupId>
-                <artifactId>kafka-streams</artifactId>
-                <version>${kafka.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.apache.zookeeper</groupId>
-                <artifactId>zookeeper</artifactId>
-                <version>${zookeeper.version}</version>
-            </dependency>
-
 
             <!-- slf4j + logback -->
             <dependency>
@@ -164,12 +82,6 @@
                 <version>${slf4j.version}</version>
             </dependency>
 
-            <!--mysql connector -->
-            <dependency>
-                <groupId>mysql</groupId>
-                <artifactId>mysql-connector-java</artifactId>
-                <version>5.1.27</version>
-            </dependency>
             <dependency>
                 <groupId>com.alibaba</groupId>
                 <artifactId>fastjson</artifactId>
@@ -181,11 +93,15 @@
                 <version>2.5</version>
             </dependency>
             <dependency>
+                <groupId>org.apache.commons</groupId>
+                <artifactId>commons-text</artifactId>
+                <version>1.3</version>
+            </dependency>
+            <dependency>
                 <groupId>joda-time</groupId>
                 <artifactId>joda-time</artifactId>
                 <version>2.9.9</version>
             </dependency>
-
         </dependencies>
     </dependencyManagement>
 </project>
