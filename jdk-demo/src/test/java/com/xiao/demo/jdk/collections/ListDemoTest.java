@@ -27,7 +27,7 @@ public class ListDemoTest {
 
         list.add("test");
 
-        List<Integer> list1 = new ArrayList<>();
+        System.out.println(Arrays.toString(list.toArray()));
 
     }
 

@@ -7,7 +7,9 @@ import org.junit.Test;
 
 import java.io.*;
 import java.nio.charset.Charset;
+import java.util.zip.InflaterInputStream;
 
+import static com.sun.org.apache.xerces.internal.xinclude.XIncludeHandler.BUFFER_SIZE;
 import static org.junit.Assert.*;
 
 public class InputOutputStreamDemoTest {
@@ -188,5 +190,29 @@ public class InputOutputStreamDemoTest {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    @Test
+    public void testUnzip() throws Exception {
+//            ByteArrayInputStream bais = new ByteArrayInputStream(compress);
+//            InflaterInputStream iis = new InflaterInputStream(bais);
+//
+//            ByteArrayOutputStream baos = new ByteArrayOutputStream();
+//
+//            int c = 0;
+//            byte[] buf = new byte[BUFFER_SIZE];
+//            while (true) {
+//                c = iis.read(buf);
+//
+//                if (c == EOF)
+//                    break;
+//
+//                baos.write(buf, 0, c);
+//            }
+//
+//            baos.flush();
+//
+//            return baos.toByteArray();
+//        }
     }
 }
