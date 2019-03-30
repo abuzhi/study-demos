@@ -23,6 +23,8 @@ public class MapDemoTest {
 
         ConcurrentHashMap concurrentHashMap = new ConcurrentHashMap();
 
+        concurrentHashMap.put("a","b");
+        concurrentHashMap.get("a");
 
     }
 
