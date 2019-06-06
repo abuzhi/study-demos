@@ -35,6 +35,7 @@
         <module>jdk-demo</module>
         <module>datastuct-demo</module>
         <module>design-pattern-demo</module>
+        <module>metrics-demo</module>
     </modules>
 
     <dependencyManagement>
