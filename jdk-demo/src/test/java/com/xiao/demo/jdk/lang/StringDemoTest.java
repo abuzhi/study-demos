@@ -17,4 +17,17 @@ public class StringDemoTest {
         System.out.println(c.equals(d));
         System.out.println(c == d.intern());
     }
+
+    @Test
+    public void testBuilder() {
+        StringBuilder stringBuilder = new StringBuilder();
+        stringBuilder.append("1")
+                .append("2")
+                .append("3");
+
+        StringBuffer stringBuffer = new StringBuffer();
+        stringBuffer.append("a")
+                .append("b")
+                .append("c");
+    }
 }

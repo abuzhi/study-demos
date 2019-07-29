@@ -43,13 +43,18 @@ public class ThreadPoolExecutorDemoTest {
         assertEquals(0,CAPACITY);
         BlockingQueue queue = new LinkedBlockingDeque(10);
         ThreadPoolExecutor pool = new ThreadPoolExecutor(10,20, 3L,TimeUnit.MINUTES,queue);
+        pool.submit(new Runnable() {
+            @Override
+            public void run() {
+                System.out.println("test");
+            }
+        });
+
     }
 
     @Test
     public void testReetrentLock() throws Exception {
         ReentrantLock reentrantLock = new ReentrantLock(true);
-
-
         reentrantLock.lock();
 
 
