@@ -8,6 +8,7 @@ import java.util.Queue;
 import java.util.concurrent.*;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.locks.ReentrantLock;
+import java.util.concurrent.locks.ReentrantReadWriteLock;
 
 import static org.junit.Assert.*;
 
@@ -57,7 +58,22 @@ public class ThreadPoolExecutorDemoTest {
         ReentrantLock reentrantLock = new ReentrantLock(true);
         reentrantLock.lock();
 
-
         reentrantLock.unlock();
+    }
+
+
+    @Test
+    public void testReadWrite() {
+        ReentrantReadWriteLock lock = new ReentrantReadWriteLock(true);
+
+        int i = 0;
+        lock.readLock();
+
+        System.out.println(i);
+
+        lock.writeLock();
+        System.out.println(i++);
+
+        System.out.println(lock.getReadLockCount());
     }
 }
