@@ -73,6 +73,46 @@
                     <showDeprecation>true</showDeprecation>
                 </configuration>
             </plugin>
+            <plugin>
+                <artifactId>maven-shade-plugin</artifactId>
+                <version>2.4.2</version>
+                <executions>
+                    <execution>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>shade</goal>
+                        </goals>
+                        <configuration>
+                            <transformers>
+                                <transformer
+                                        implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
+                                    <manifestEntries>
+                                        <Main-Class>com.xiao.demo.jdk.lang.ProcessDemo</Main-Class>
+                                    </manifestEntries>
+                                </transformer>
+                                <!--<transformer-->
+                                <!--implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">-->
+                                <!--<manifestEntries>-->
+                                <!--<Main-Class>com.xiao.kafka.RunMain</Main-Class>-->
+                                <!--</manifestEntries>-->
+                                <!--</transformer>-->
+                                <!--<transformer-->
+                                <!--implementation="org.apache.maven.plugins.shade.resource.AppendingTransformer">-->
+                                <!--<resource>META-INF/spring.handlers</resource>-->
+                                <!--</transformer>-->
+                                <!--<transformer-->
+                                <!--implementation="org.apache.maven.plugins.shade.resource.AppendingTransformer">-->
+                                <!--<resource>META-INF/spring.schemas</resource>-->
+                                <!--</transformer>-->
+                                <!--<transformer-->
+                                <!--implementation="org.apache.maven.plugins.shade.resource.XmlAppendingTransformer">-->
+                                <!--<resource>logback.xml</resource>-->
+                                <!--</transformer>-->
+                            </transformers>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
         </plugins>
     </build>
 
