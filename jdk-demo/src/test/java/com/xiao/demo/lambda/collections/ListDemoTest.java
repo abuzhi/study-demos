@@ -1,8 +1,6 @@
 package com.xiao.demo.lambda.collections;
 
-import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
-import javafx.beans.binding.MapBinding;
 import org.junit.Test;
 
 import java.util.*;
