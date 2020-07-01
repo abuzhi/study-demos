@@ -20,7 +20,7 @@
         <spring.boot.version>1.4.5.RELEASE</spring.boot.version>
         <logback.version>1.2.3</logback.version>
         <hadoop.version>2.7.3</hadoop.version>
-        <quartz.version>2.3.0</quartz.version>
+        <quartz.version>2.3.2</quartz.version>
         <hikaricp.version>3.2.0</hikaricp.version>
 
         <!--test-->
